@@ -1,0 +1,17 @@
+gradlew
+gradlew.bat
+settings.gradle
+
+out/
+*.iml
+.gradle
+.idea
+.settings
+build
+gradle
+target
+resources
+.class
+.html
+.classpath
+ApplicationConfig.java

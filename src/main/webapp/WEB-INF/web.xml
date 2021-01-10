@@ -15,17 +15,20 @@
 	</context-param>
 
 	<!-- it is used to listen the contextloader -->
+	<!-- step1. create spring container -->
 	<listener>
 		<listener-class>
 			org.springframework.web.context.ContextLoaderListener
 		</listener-class>
 	</listener>
 
+	<!-- step2. dispatch servlet -->
 	<servlet>
 		<servlet-name>onlineShop</servlet-name>
 		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
 	</servlet>
 
+	<!-- step3. mapping servlet with url-->
 	<servlet-mapping>
 		<servlet-name>onlineShop</servlet-name>
 		<url-pattern>/</url-pattern>

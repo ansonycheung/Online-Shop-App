@@ -15,6 +15,9 @@ public class HomePageController {
   }
 
   @RequestMapping("/login")
+  //  --> /login
+  //  --> /login?error  (prompt user if username and password not matching)
+  //  --> /login?logout (prompt user if logout successfully)
   public ModelAndView login(@RequestParam(value = "error", required = false) String error,
       @RequestParam(value = "logout", required = false) String logout) {
     ModelAndView modelAndView = new ModelAndView();

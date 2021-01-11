@@ -43,7 +43,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         .dataSource(dataSource)
         .usersByUsernameQuery("SELECT emailId, password, enabled FROM users WHERE emailId=?")
         .authoritiesByUsernameQuery("SELECT emailId, authorities FROM authorities WHERE emailId=?");
-
   }
 
   @SuppressWarnings("deprecation")

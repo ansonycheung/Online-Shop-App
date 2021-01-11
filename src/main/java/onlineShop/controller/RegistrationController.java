@@ -20,6 +20,7 @@ public class RegistrationController {
   @RequestMapping(value = "/customer/registration", method = RequestMethod.GET)
   public ModelAndView getRegistrationForm() {
     Customer customer = new Customer();
+    // return a registration html
     return new ModelAndView("register", "customer", customer);
   }
 

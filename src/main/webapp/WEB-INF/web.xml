@@ -15,6 +15,7 @@
 	</context-param>
 
 	<!-- it is used to login with spring security -->
+	<!-- do not change the two filter's order below -->
 	<filter>
 		<filter-name>springSecurityFilterChain</filter-name>
 		<filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>

@@ -4,34 +4,35 @@
       xsi:schemaLocation="http://www.springframework.org/schema/webflow
 						  http://www.springframework.org/schema/webflow/spring-webflow.xsd">
 
+    <!--step 1. initialize a order-->
     <var name="order" class="onlineShop.entity.SalesOrder" />
-    
+    <!--step 2. validate the cart-->
     <action-state id="addCartToOrder">
         <evaluate expression="cartDao.validate(requestParameters.cartId)" result="order.cart" />
         <transition to="invalidCartWarning" on-exception="java.io.IOException" />
         <transition to="collectCustomerInfo" />
     </action-state>
- 
+    <!--step 3. link customer information to the order-->
     <view-state id="collectCustomerInfo" view="collectCustomerInfo.jsp" model="order">
         <transition on="customerInfoCollected" to="collectShippingDetail" />
     </view-state>
-
+    <!--step 4. collect detail-->
     <view-state id="collectShippingDetail" view="collectShippingDetail.jsp" model="order">
         <transition on="shippingDetailCollected" to="orderConfirmation" />
         <transition on="backToCollectCustomerInfo" to="collectCustomerInfo" />
     </view-state>
-
+    <!--step 5. confirm order-->
      <view-state id="orderConfirmation" view = "orderConfirmation.jsp"> 
          <transition on="orderConfirmed" to="saveOrder" /> 
          <transition on="backToCollectShippingDetail" to="collectShippingDetail" /> 
-     </view-state> 
-
+     </view-state>
+    <!--step 6. clear cart-->
     <action-state id="clearCart">
         <evaluate expression="cartItemDao.removeAllCartItems(order.cart)" />
         <transition to="thankCustomer" />
     </action-state>
-
-	<action-state id="saveOrder">
+    <!--step 7. save order-->
+	  <action-state id="saveOrder">
     	<evaluate expression="salesOrderService.addSalesOrder(order)" />
     	<transition to="clearCart" />
     </action-state>

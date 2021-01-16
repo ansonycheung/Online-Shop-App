@@ -3,6 +3,7 @@
  "http://java.sun.com/dtd/web-app_2_3.dtd" >
 
 <web-app>
+	<!-- Tomcat will look up this web.xml file at first -->
 	<display-name>OnlineShop WebSite</display-name>
 
 	<!-- to connect the dispatcher servlet and applicationContext -->

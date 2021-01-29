@@ -8,6 +8,25 @@
   <li>Developed a Spring Web Flow to support item ordering.</li>
 </ul>  
 
+<h2>Features</h2>
+<ul>
+  <li>Home Page</li>
+  <li>Product Management</li>
+  <li>Product Purchased</li>
+</ul>
+
+<h3>Home Page</h3>
+
+![Home Page](https://github.com/ansonycheung/Online-Shop-App/blob/master/src/main/webapp/OnlineShop%20homepage.png)
+
+<h3>Product Management</h3>
+
+![Product Management](https://github.com/ansonycheung/Online-Shop-App/blob/master/src/main/webapp/OnlineShop%20product%20page.png)
+
+<h3>Product Purchased</h3>
+
+![Product Purchased](https://github.com/ansonycheung/Online-Shop-App/blob/master/src/main/webapp/OnlineShop%20purchased%20page.png)
+
 
 <h2>Applications</h2>
 <ul>
